@@ -1,0 +1,24 @@
+{
+    "name": "artox-lab/clck-ru-shortener",
+    "version": "1.0.0",
+    "description": "",
+    "keywords": [
+        "swagger",
+        "php",
+        "sdk",
+        "api",
+        "clck.ru",
+        "url",
+        "shorten"
+    ],
+    "require": {
+        "php": ">=5.5",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "autoload": {
+        "psr-4": { "ArtoxLab\\ClckRuSDK\\" : "src/" }
+    }
+}
