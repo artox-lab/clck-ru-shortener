@@ -157,6 +157,19 @@ class DefaultApi
                 }
             }
 
+            if (false === filter_var($content, FILTER_VALIDATE_URL)) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error API - Invalid shorten url: (%s)',
+                        $statusCode,
+                        json_encode($content)
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
             return [
                 ObjectSerializer::deserialize($content, $returnType, []),
                 $response->getStatusCode(),
